@@ -22,15 +22,14 @@
     height: 100%;
     font-size: 16px;
     cursor: default;
-    background: #000;
   }
   
   .container {
     display: flex;
     height: 100vh;
     /* background: url('https://cdn.shopify.com/s/files/1/0577/1863/6678/files/logo.jpg?v=1725371859') no-repeat center center fixed; */
-    /* background-color: #000; */
-    /* background-size: cover; */
+    background-color: #000;
+    background-size: cover;
   }
   
   .image-column, .content-column {
@@ -276,40 +275,6 @@
         top: 10px;
         left: 10px;
       }
-          /* Adjust width of the card container on mobile */
-        .container-card-roadmap {
-            width: 90%;
-            margin: 0 auto;
-        }
-
-        /* Ensure the cards take full width and adjust their height */
-        .card-roadmap {
-            width: 100%;
-            height: auto;
-        }
-
-        /* Adjusting font size for mobile readability */
-        .card-roadmap h4 {
-            font-size: 1.2rem;
-        }
-
-        .card-roadmap p {
-            font-size: 0.9rem;
-        }
-
-        /* Adjust padding and margins for mobile */
-        .container-card-roadmap {
-            padding: 20px;
-        }
-
-            .card-roadmap {
-            margin-bottom: 20px;
-        }
-        .button-container {
-          background-color: inherit; /* Or specify the color explicitly */
-        }
-        #target{display: none;}
-
     }
   </style>
   </head>
@@ -421,7 +386,7 @@
       });
     }
     
-    if (window.innerWidth >= 768) { moveTarget();}
+    moveTarget();
     </script>
   </body>
   </html>

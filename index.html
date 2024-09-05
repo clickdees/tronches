@@ -22,14 +22,15 @@
     height: 100%;
     font-size: 16px;
     cursor: default;
+    background: #000;
   }
   
   .container {
     display: flex;
     height: 100vh;
     /* background: url('https://cdn.shopify.com/s/files/1/0577/1863/6678/files/logo.jpg?v=1725371859') no-repeat center center fixed; */
-    background-color: #000;
-    background-size: cover;
+    /* background-color: #000; */
+    /* background-size: cover; */
   }
   
   .image-column, .content-column {
@@ -93,7 +94,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     font-family: 'Press Start 2P', cursive;
-    word-spacing: -1.2rem;
+    word-spacing: -0.9rem;
   }
   
   .contract-address {
@@ -268,13 +269,50 @@
         padding: 20px;
       }
       h1 { font-size: 1.8em; }
-      .tagline { font-size: 1em; }
+      .tagline {
+            font-size: 0.9rem;
+            word-spacing: -0.6rem;
+        }
       .logo {
         width: 60px;
         height: 60px;
         top: 10px;
         left: 10px;
       }
+          /* Adjust width of the card container on mobile */
+        .container-card-roadmap {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* Ensure the cards take full width and adjust their height */
+        .card-roadmap {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Adjusting font size for mobile readability */
+        .card-roadmap h4 {
+            font-size: 1.2rem;
+        }
+
+        .card-roadmap p {
+            font-size: 0.9rem;
+        }
+
+        /* Adjust padding and margins for mobile */
+        .container-card-roadmap {
+            padding: 20px;
+        }
+
+            .card-roadmap {
+            margin-bottom: 20px;
+        }
+        .button-container {
+          background-color: inherit; /* Or specify the color explicitly */
+        }
+        #target{display: none;}
+
     }
   </style>
   </head>
@@ -287,13 +325,15 @@
         <img src="https://cdn.shopify.com/s/files/1/0577/1863/6678/files/soldier-flipped2.jpg?v=1725371861" alt="Soldier with glowing triangle emblem" class="soldier-image">
       </div>
       <div class="content-column">
-        <header>
-          <h1>$Tronches</h1>
-        </header>
-        
-        <main>
-          <h2>🪖  <span class="tagline">FROM THE TRONCHES</span>  🪖</h2>
-          <h2>🌞  <span class="tagline">TO THE SUN</span>  🌞</h2>
+       <main>
+          <header>
+            <h1>$Tronches</h1>
+          </header>
+            <div class="tagline">
+                <p>🪖  <span class="tagline">FROM THE TRONCHES</span>  🪖</p>
+                <p>🌞  <span class="tagline">TO THE SUN</span>  🌞</p>
+            </div>
+   
           
           <div class="contract-address">
             <span class="contract-label">Contract address</span>
@@ -365,8 +405,10 @@
         navigator.clipboard.writeText(contractText).then(() => {
           const copyBtn = document.querySelector('.copy-btn');
           copyBtn.textContent = 'Copied!';
+          copyBtn.style.backgroundColor = "#fff";
           setTimeout(() => {
             copyBtn.textContent = 'Copy Address';
+            copyBtn.style.backgroundColor = "#ff0000";
           }, 2000);
         });
       }
@@ -386,7 +428,7 @@
       });
     }
     
-    moveTarget();
+    if (window.innerWidth >= 768) { moveTarget();}
     </script>
   </body>
   </html>
